@@ -37,7 +37,6 @@ export default function Experience() {
           <Model position={ [ 0, isMobile ? -0.5 : 0, 0 ] } scale={ 0.6 } />
         </Float>
       </Suspense>  
-      <OrbitControls minPolarAngle={Math.PI / -2} maxPolarAngle={Math.PI / 1} enableZoom={ false } enableRotate={ true } enablePan={ false } />
       <Environment preset='lobby' />
       </>
   )

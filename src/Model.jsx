@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { useGLTF } from "@react-three/drei";
+import { OrbitControls, useGLTF } from "@react-three/drei";
 import gsap from 'gsap'
 import { useThree } from "@react-three/fiber";
 import { useLayoutEffect } from "react";
@@ -10,6 +10,7 @@ export default function Model(props) {
   const { camera, scene } = useThree()
 
   const icon = useRef()
+  const controls = useRef()
 
   const tl = gsap.timeline()
 
@@ -59,15 +60,102 @@ export default function Model(props) {
     }, (context) => {
       let { isMobile, isDesktop } = context.conditions;
 
-
-      // FIRST TO SECOND
-
-
       tl
+
+      // FIRST
+
+      .to(".one-content", {
+        opacity: 0,
+        yPercent: -10,
+        scrollTrigger: {
+          trigger: ".two",
+          start: "top 100%", // Adjust start to start later
+          end: "bottom 100%",
+          scrub: true,
+          immediateRender: false,
+        },
+      })
+
+
       .to(icon.current.rotation, {
         y: Math.PI * 2,
         scrollTrigger: {
           trigger: ".two",
+          start: "top bottom",
+          end: "top top",
+          scrub: true,
+          immediateRender: false,
+        },
+      })
+
+      .to(controls.current.target, {
+        x: 3,
+        scrollTrigger: {
+          trigger: ".two",
+          start: "top bottom",
+          end: "top top",
+          scrub: true,
+          immediateRender: false,
+        },
+      })
+
+      // SECOND
+
+
+      .to(icon.current.rotation, {
+        y: Math.PI * 4,
+        scrollTrigger: {
+          trigger: ".three",
+          start: "top bottom",
+          end: "top top",
+          scrub: true,
+          immediateRender: false,
+        },
+      })
+
+      .to(controls.current.target, {
+        x: -3,
+        scrollTrigger: {
+          trigger: ".three",
+          start: "top bottom",
+          end: "top top",
+          scrub: true,
+          immediateRender: false,
+        },
+      })
+
+      // THIRD
+
+
+      .to(icon.current.rotation, {
+        y: Math.PI * 6,
+        scrollTrigger: {
+          trigger: ".four",
+          start: "top bottom",
+          end: "top top",
+          scrub: true,
+          immediateRender: false,
+        },
+      })
+
+      // FIVE
+
+
+      .to(icon.current.rotation, {
+        y: Math.PI * 8,
+        scrollTrigger: {
+          trigger: ".five",
+          start: "top bottom",
+          end: "top top",
+          scrub: true,
+          immediateRender: false,
+        },
+      })
+
+      .to(controls.current.target, {
+        x: 0,
+        scrollTrigger: {
+          trigger: ".five",
           start: "top bottom",
           end: "top top",
           scrub: true,
@@ -84,6 +172,8 @@ export default function Model(props) {
 
   const { nodes, materials } = useGLTF('./vmodel.glb')
   return (
+    <>
+    <OrbitControls  ref={controls} target={ [ 0, 0, 0 ] } minPolarAngle={Math.PI / -2} maxPolarAngle={Math.PI / 1} enableZoom={ false } enableRotate={ true } enablePan={ false } />
     <group ref={icon} {...props} dispose={null}>
       <mesh
         castShadow
@@ -95,6 +185,7 @@ export default function Model(props) {
         <meshStandardMaterial metalness={ 0.1 } roughness={ 0.1 } color={ "#e5b751" } />
       </mesh>
     </group>
+    </>
   )
 }
 

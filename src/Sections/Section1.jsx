@@ -11,10 +11,6 @@ export const Section1 = () => {
             <h1 className="headline white one-headline" >FENNEC</h1>
           </div>
         </section>
-        <section className="two">
-          <div className="two-content" >
-          </div>
-        </section>
 
       </>
     )
