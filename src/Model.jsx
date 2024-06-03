@@ -66,10 +66,10 @@ export default function Model(props) {
 
       .to(".one-content", {
         opacity: 0,
-        yPercent: -10,
+        yPercent: -50,
         scrollTrigger: {
           trigger: ".two",
-          start: "top 100%", // Adjust start to start later
+          start: "top bottom", // Adjust start to start later
           end: "bottom 100%",
           scrub: true,
           immediateRender: false,
@@ -88,80 +88,91 @@ export default function Model(props) {
         },
       })
 
-      .to(controls.current.target, {
-        x: 3,
+      .to(".experience", {
+        position: "absolute",
         scrollTrigger: {
-          trigger: ".two",
-          start: "top bottom",
-          end: "top top",
+          trigger: ".three",
+          start: "top bottom", // Adjust start to start later
+          end: "bottom 100%",
           scrub: true,
           immediateRender: false,
         },
       })
+
+      // .to(controls.current.target, {
+      //   x: 3,
+      //   scrollTrigger: {
+      //     trigger: ".two",
+      //     start: "top bottom",
+      //     end: "top top",
+      //     scrub: true,
+      //     immediateRender: false,
+      //   },
+      // })
 
       // SECOND
 
 
-      .to(icon.current.rotation, {
-        y: Math.PI * 4,
-        scrollTrigger: {
-          trigger: ".three",
-          start: "top bottom",
-          end: "top top",
-          scrub: true,
-          immediateRender: false,
-        },
-      })
+      // .to(icon.current.rotation, {
+      //   y: Math.PI * 4,
+      //   scrollTrigger: {
+      //     trigger: ".three",
+      //     start: "top bottom",
+      //     end: "top top",
+      //     scrub: true,
+      //     immediateRender: false,
+      //   },
+      // })
 
-      .to(controls.current.target, {
-        x: -3,
-        scrollTrigger: {
-          trigger: ".three",
-          start: "top bottom",
-          end: "top top",
-          scrub: true,
-          immediateRender: false,
-        },
-      })
+      // .to(controls.current.target, {
+      //   x: -3,
+      //   scrollTrigger: {
+      //     trigger: ".three",
+      //     start: "top bottom",
+      //     end: "top top",
+      //     scrub: true,
+      //     immediateRender: false,
+      //   },
+      // })
 
-      // THIRD
-
-
-      .to(icon.current.rotation, {
-        y: Math.PI * 6,
-        scrollTrigger: {
-          trigger: ".four",
-          start: "top bottom",
-          end: "top top",
-          scrub: true,
-          immediateRender: false,
-        },
-      })
-
-      // FIVE
+      // // THIRD
 
 
-      .to(icon.current.rotation, {
-        y: Math.PI * 8,
-        scrollTrigger: {
-          trigger: ".five",
-          start: "top bottom",
-          end: "top top",
-          scrub: true,
-          immediateRender: false,
-        },
-      })
+      // .to(icon.current.rotation, {
+      //   y: Math.PI * 6,
+      //   scrollTrigger: {
+      //     trigger: ".four",
+      //     start: "top bottom",
+      //     end: "top top",
+      //     scrub: true,
+      //     immediateRender: false,
+      //   },
+      // })
 
-      .to(controls.current.target, {
-        x: 0,
-        scrollTrigger: {
-          trigger: ".five",
-          start: "top bottom",
-          end: "top top",
-          scrub: true,
-          immediateRender: false,
-        },
-      })
+      // // FIVE
+
+
+      // .to(icon.current.rotation, {
+      //   y: Math.PI * 8,
+      //   scrollTrigger: {
+      //     trigger: ".five",
+      //     start: "top bottom",
+      //     end: "top top",
+      //     scrub: true,
+      //     immediateRender: false,
+      //   },
+      // })
+
+      // .to(controls.current.target, {
+      //   x: 0,
+      //   scrollTrigger: {
+      //     trigger: ".five",
+      //     start: "top bottom",
+      //     end: "top top",
+      //     scrub: true,
+      //     immediateRender: false,
+      //   },
+      // })
 
       
 
@@ -180,7 +191,7 @@ export default function Model(props) {
         receiveShadow
         geometry={nodes.path1.geometry}
         rotation={[Math.PI / 2, 0, 0]}
-        scale={10}
+        scale={8}
       >
         <meshStandardMaterial metalness={ 0.1 } roughness={ 0.1 } color={ "#e5b751" } />
       </mesh>

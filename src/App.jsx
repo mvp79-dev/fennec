@@ -98,10 +98,6 @@ function App() {
     <>
       <LoadingScreen />
 
-      <div className="experience">
-        <CanvasContainer />
-      </div>
-
       <div className="nav">
         <div className="right-content">
           <h1 className={`small-text navigation-text ${currentSection === 'section1' ? 'white' : 'grey'}`} onClick={() => scrollToSection(section1Ref)}>Home</h1>

@@ -16,7 +16,16 @@ body,
 }
 
 ::-webkit-scrollbar {
-  display: auto;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fefeff25;
+  height: 10vh;
+}
+/* TRACK */
+::-webkit-scrollbar-track {
+  background-color: #111111;
 }
 
 section {
@@ -32,7 +41,8 @@ section {
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 2;
+  transition: all 0.3s ease; /* Smooth transition */
 }
 
 .mobile-scroll {
@@ -275,29 +285,66 @@ html.lenis {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0 10%;
   justify-content: center;
+  position: relative;
 }
 
 .two-content {
-  width: 40%;
+  width: 100%;
   height: fit-content;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5vw;
+}
+
+.two-content-left {
+  width: 30vw;
+  height: 100%;
+  display: flex;
   flex-direction: column;
-  align-self: flex-end;
+  align-items: end;
+  justify-content: space-evenly;
+}
+
+.two-content-center {
+  width: 25vw;
+  height: 75vh;
+  background-color: #fefeff25;
+  border-radius: 50px;
   opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
-
-.two-content.visible {
+.two-content-center.visible {
   opacity: 1;
-  transform: scale(1);
 }
 
-.two-content-list {
-  padding: auto;
-  margin: 0;
+.two-content-right {
+  width: 30vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.two-content-slide-left {
+  opacity: 0;
+  transform: translateX(-5vw);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+.two-content-slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.two-content-slide-right {
+  opacity: 0;
+  transform: translateX(5vw);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+.two-content-slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* SECTION THREE */
@@ -313,7 +360,7 @@ html.lenis {
 }
 
 .three-content {
-  width: 40%;
+  width: 100%;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -322,6 +369,7 @@ html.lenis {
   opacity: 0;
   transform: scale(0.95);
   transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+  text-align: center;
 }
 
 .three-content.visible {
@@ -342,15 +390,17 @@ html.lenis {
 }
 
 .four-content {
-  width: 40%;
+  width: 100%;
   height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: center;
+  align-items: center;
   opacity: 0;
   transform: scale(0.95);
   transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+  text-align: center;
 }
 
 .four-content.visible {
