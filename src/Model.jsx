@@ -78,7 +78,7 @@ export default function Model(props) {
 
 
       .to(icon.current.rotation, {
-        y: Math.PI * 2,
+        y: Math.PI * 1,
         scrollTrigger: {
           trigger: ".two",
           start: "top bottom",
