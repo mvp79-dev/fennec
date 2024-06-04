@@ -707,9 +707,8 @@ textarea {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     z-index: 20;
-    background-color: transparent;
   }
 
   /* TEXTS */
@@ -717,7 +716,7 @@ textarea {
 .headline {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 6rem;
+  font-size: 5.5rem;
   text-align: left;
   line-height: 100%;
 }
