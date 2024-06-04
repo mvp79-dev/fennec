@@ -88,6 +88,19 @@ export default function Model(props) {
         },
       })
 
+      .to(icon.current.scale, {
+        y: isMobile ? 0.2 : 0.4,
+        x: isMobile ? 0.2 : 0.4,
+        z: isMobile ? 0.2 : 0.4,
+        scrollTrigger: {
+          trigger: ".two",
+          start: "top bottom",
+          end: "top top",
+          scrub: true,
+          immediateRender: false,
+        },
+      })
+
       .to(".experience", {
         position: "absolute",
         scrollTrigger: {
@@ -99,81 +112,6 @@ export default function Model(props) {
         },
       })
 
-      // .to(controls.current.target, {
-      //   x: 3,
-      //   scrollTrigger: {
-      //     trigger: ".two",
-      //     start: "top bottom",
-      //     end: "top top",
-      //     scrub: true,
-      //     immediateRender: false,
-      //   },
-      // })
-
-      // SECOND
-
-
-      // .to(icon.current.rotation, {
-      //   y: Math.PI * 4,
-      //   scrollTrigger: {
-      //     trigger: ".three",
-      //     start: "top bottom",
-      //     end: "top top",
-      //     scrub: true,
-      //     immediateRender: false,
-      //   },
-      // })
-
-      // .to(controls.current.target, {
-      //   x: -3,
-      //   scrollTrigger: {
-      //     trigger: ".three",
-      //     start: "top bottom",
-      //     end: "top top",
-      //     scrub: true,
-      //     immediateRender: false,
-      //   },
-      // })
-
-      // // THIRD
-
-
-      // .to(icon.current.rotation, {
-      //   y: Math.PI * 6,
-      //   scrollTrigger: {
-      //     trigger: ".four",
-      //     start: "top bottom",
-      //     end: "top top",
-      //     scrub: true,
-      //     immediateRender: false,
-      //   },
-      // })
-
-      // // FIVE
-
-
-      // .to(icon.current.rotation, {
-      //   y: Math.PI * 8,
-      //   scrollTrigger: {
-      //     trigger: ".five",
-      //     start: "top bottom",
-      //     end: "top top",
-      //     scrub: true,
-      //     immediateRender: false,
-      //   },
-      // })
-
-      // .to(controls.current.target, {
-      //   x: 0,
-      //   scrollTrigger: {
-      //     trigger: ".five",
-      //     start: "top bottom",
-      //     end: "top top",
-      //     scrub: true,
-      //     immediateRender: false,
-      //   },
-      // })
-
       
 
     })
@@ -184,14 +122,14 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF('./vmodel.glb')
   return (
     <>
-    <OrbitControls  ref={controls} target={ [ 0, 0, 0 ] } minPolarAngle={Math.PI / -2} maxPolarAngle={Math.PI / 1} enableZoom={ false } enableRotate={ true } enablePan={ false } />
+    <OrbitControls  ref={controls} target={ [ 0, 0, 0 ] } minPolarAngle={Math.PI / -2} maxPolarAngle={Math.PI / 1} enableZoom={ false } enableRotate={ false } enablePan={ false } />
     <group ref={icon} {...props} dispose={null}>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.path1.geometry}
         rotation={[Math.PI / 2, 0, 0]}
-        scale={8}
+        scale={9}
       >
         <meshStandardMaterial metalness={ 0.1 } roughness={ 0.1 } color={ "#e5b751" } />
       </mesh>
