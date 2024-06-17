@@ -328,6 +328,12 @@ html.lenis {
   display: inline;
 }
 
+.typewriter-box {
+  display: flex;
+  align-items: center;
+  gap: 0.2vw;
+}
+
 
 
 /* SECTION THREE */

@@ -69,15 +69,18 @@ export const Section2 = () => {
             </div>
             <div className="two-content-right" >
               <h1 className="small-headline margin-top white" >We are <span className="gold" >Fennec AI</span></h1>
-              <p className="description white margin-center" > A marketplace of AI and ML products and services specifically designed to grow the hospitality and nightlife industry</p>
-              <Typewriter
-                options={{
-                strings: ["Discover", "Connect", "Elevate", "Simplify"],
-                autoStart: true,
-                loop: true,
-                wrapperClassName: "typing-text",
-                }}
-              />
+              <p className="description white margin-center" > A marketplace of AI and ML products and services specifically designed to grow the hospitality and nightlife industry with the BEST solutions powered by Fennec AI:</p>
+              <div className="typewriter-box" >
+                <h1 className="description white" >With the BEST solutions powered by Fennec AI:</h1>
+                <Typewriter
+                  options={{
+                  strings: ["Discover", "Connect", "Elevate", "Simplify"],
+                  autoStart: true,
+                  loop: true,
+                  wrapperClassName: "typing-text",
+                  }}
+                />
+              </div>
             </div>
           </div>
         </section>
