@@ -1,5 +1,5 @@
 import { Suspense, useEffect, useState } from 'react'
-import { OrbitControls, Environment, Float, SoftShadows } from '@react-three/drei'
+import { OrbitControls, Environment, Float, SoftShadows, OrthographicCamera, PerspectiveCamera } from '@react-three/drei'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Model from './Model'
@@ -34,7 +34,7 @@ export default function Experience() {
       <SoftShadows intensity={ 20 } />
       <Suspense fallback >
           <Model position={ [ 0, 0, 0 ] } scale={ 0.5 } />
-      </Suspense>  
+      </Suspense>
       <Environment preset='lobby' />
       </>
   )

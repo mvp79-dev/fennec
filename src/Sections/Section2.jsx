@@ -57,7 +57,7 @@ export const Section2 = () => {
           </div>
           <div className={`two-content ${isVisibleOne ? 'visible' : ''}`} ref={oneRef}>
             <div className="two-content-left" >
-              <img src="/phone.png" className="two-center-image" />
+              {/* <img src="/phone.png" className="two-center-image" /> */}
             </div>
             <div className="two-content-right" >
               <h1 className="small-headline margin-top white" >We are <span className="gold" >Fennec AI</span></h1>

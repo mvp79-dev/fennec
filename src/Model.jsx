@@ -91,11 +91,12 @@ export default function Model(props) {
           immediateRender: false,
         },
       })
+      
 
       .to(phone.current.scale, {
-        x: 1,
-        y: 1,
-        z: 1,
+        x: 0.85,
+        y: 0.85,
+        z: 0.85,
         scrollTrigger: {
           trigger: ".two",
           start: "top bottom",
@@ -165,7 +166,7 @@ export default function Model(props) {
         <meshStandardMaterial metalness={ 0.1 } roughness={ 0.1 } color={ "#e5b751" } />
       </mesh>
       </Float>
-      <group ref={phone} scale={ 0 } position={[0, 0, -5]} rotation={[Math.PI, 0, Math.PI]}>
+      <group ref={phone} scale={ 0 } position={[0, 0, -5]} rotation={[Math.PI, 0.2, Math.PI]}>
         <mesh
           castShadow
           receiveShadow
