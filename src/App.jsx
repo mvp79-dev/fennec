@@ -100,7 +100,7 @@ function App() {
           <h1 className={`small-text navigation-text ${currentSection === 'section1' ? 'gold' : 'grey'}`} onClick={() => scrollToSection(section1Ref)}>Home</h1>
           <h1 className={`small-text navigation-text ${currentSection === 'section2' ? 'gold' : 'grey'}`} onClick={() => scrollToSection(section2Ref)}>Why</h1>
           <h1 className={`small-text navigation-text ${currentSection === 'section3' ? 'gold' : 'grey'}`} onClick={() => scrollToSection(section3Ref)}>Explore</h1>
-          <h1 className={`small-text navigation-text ${currentSection === 'section5' ? 'gold' : 'grey'}`} onClick={() => scrollToSection(section5Ref)}>Join</h1>
+          <h1 className={`small-text navigation-text ${currentSection === 'section5' ? 'gold' : 'grey'}`} onClick={() => scrollToSection(section5Ref)}>Sign Up</h1>
         </div>
       </div>
 

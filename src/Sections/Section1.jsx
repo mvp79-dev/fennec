@@ -7,7 +7,7 @@ export const Section1 = () => {
         <section className="one">
           <div className="mobile-scroll" />
           <div className="one-content" >
-            <h1 className="headline white one-headline" >FENNEC</h1>
+            <img src="/logofennec.png" className="one-content-logo" alt="" />
           </div>
         </section>
 

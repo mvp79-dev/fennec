@@ -5,19 +5,9 @@ export const Section2 = () => {
 
   const [isVisibleOne, setIsVisibleOne] = useState(false);
   const [isVisibleTwo, setIsVisibleTwo] = useState(false);
-  const [isVisibleThree, setIsVisibleThree] = useState(false);
-  const [isVisibleFour, setIsVisibleFour] = useState(false);
-  const [isVisibleFive, setIsVisibleFive] = useState(false);
-  const [isVisibleSix, setIsVisibleSix] = useState(false);
-  const [isVisibleSeven, setIsVisibleSeven] = useState(false);
 
   const oneRef = useRef(null);
   const twoRef = useRef(null);
-  const threeRef = useRef(null);
-  const fourRef = useRef(null);
-  const fiveRef = useRef(null);
-  const sixRef = useRef(null);
-  const sevenRef = useRef(null);
 
   useEffect(() => {
 
@@ -25,65 +15,51 @@ export const Section2 = () => {
       setIsVisibleOne(entry.isIntersecting);
     });
 
-    const observerTwo = new IntersectionObserver(([entry]) => {
-      setIsVisibleTwo(entry.isIntersecting);
-    });
-
-
-    const observerFour = new IntersectionObserver(([entry]) => {
-      setIsVisibleFour(entry.isIntersecting);
-    });
-
-    const observerFive = new IntersectionObserver(([entry]) => {
-      setIsVisibleFive(entry.isIntersecting);
-    });
-
-    const observerSix = new IntersectionObserver(([entry]) => {
-      setIsVisibleSix(entry.isIntersecting);
-    });
-
-
     observerOne.observe(oneRef.current);
-    observerTwo.observe(twoRef.current);
-    observerFour.observe(fourRef.current);
-    observerFive.observe(fiveRef.current);
-    observerSix.observe(sixRef.current);
 
     return () => {
       observerOne.unobserve(oneRef.current);
-      observerTwo.unobserve(twoRef.current);
-      observerFour.unobserve(fourRef.current);
-      observerFive.unobserve(fiveRef.current);
-      observerSix.unobserve(sixRef.current);
+    };
+  }, []);
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as needed
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
     return (
       <>
+        {isMobile && (
+          <>
+          <div className="two-content-right-mobile" >
+            <div className="mobile-scroll" />
+            <h1 className="small-headline margin-top white" >We are <span className="gold" >Fennec AI</span></h1>
+            <p className="description white margin-center" > A marketplace of AI and ML products and services specifically designed to grow the hospitality and nightlife industry</p>
+          </div>
+          </>
+        )}
         <section className="two">
           <div className="mobile-scroll" />
           <div className="experience">
             <CanvasContainer />
           </div>
-          <div className="two-content">
-            <div className="two-content-left">
-              <div className={`two-content-slide-left ${isVisibleOne ? 'visible' : ''}`} ref={oneRef} > 
-                <h1 className="medium-headline white" >Discover</h1>
-              </div>
-              <div className={`two-content-slide-left ${isVisibleTwo ? 'visible' : ''}`} ref={twoRef} > 
-                <h1 className="medium-headline white" >Elevate</h1>
-              </div>
-            </div>
-            <div className={`two-content-center ${isVisibleFour ? 'visible' : ''}`} ref={fourRef}>
+          <div className={`two-content ${isVisibleOne ? 'visible' : ''}`} ref={oneRef}>
+            <div className="two-content-left" >
               <img src="/phone.png" className="two-center-image" />
             </div>
-            <div className="two-content-right">
-              <div className={`two-content-slide-right ${isVisibleFive ? 'visible' : ''}`} ref={fiveRef} > 
-                <h1 className="medium-headline white" >Connect</h1>
-              </div>
-              <div className={`two-content-slide-right ${isVisibleSix ? 'visible' : ''}`} ref={sixRef} > 
-                <h1 className="medium-headline white" >Simplify</h1>
-              </div>
+            <div className="two-content-right" >
+              <h1 className="small-headline margin-top white" >We are <span className="gold" >Fennec AI</span></h1>
+              <p className="description white margin-center" > A marketplace of AI and ML products and services specifically designed to grow the hospitality and nightlife industry</p>
             </div>
           </div>
         </section>
@@ -91,12 +67,3 @@ export const Section2 = () => {
       </>
     )
 }
-
-            // <h1 className="small-description grey" >Our marketplace offers a wide range of hyper personalized AI-powered products and services designed to:</h1>
-            // <ul className="two-content-list" >
-            //     <li className="description white" >Enhance Customer experiences</li>
-            //     <li className="description white" >Increase Customer Retention</li>
-            //     <li className="description white" >Drive Growth and Revenue</li>
-            //     <li className="description white" >Streamline Workflows</li>
-            //     <li className="description white" >Boost Operational Efficiency</li>
-            // </ul> 

@@ -17,17 +17,20 @@ export default function Model(props) {
   let mm  = gsap.matchMedia();
 
   const cameraLoads = () => {
+    const isMobile = window.innerWidth <= 799;
+    const cameraPosition = isMobile ? { x: 0, y: 0, z: 25 } : { x: 0, y: 0, z: 15 };
+
     gsap.to(camera.position, {
       duration: 5,
-      x: 0,
-      y: 0,
-      z: 15,
+      x: cameraPosition.x,
+      y: cameraPosition.y,
+      z: cameraPosition.z,
       ease: 'power3.out',
     });
   };
 
   useEffect(() => {
-      cameraLoads();
+    cameraLoads();
   }, []);
 
   useLayoutEffect(() => {
@@ -88,10 +91,21 @@ export default function Model(props) {
         },
       })
 
+      .to(controls.current.target, {
+        x: isMobile ? 0 : 4,
+        scrollTrigger: {
+          trigger: ".two",
+          start: "top bottom",
+          end: "top top",
+          scrub: true,
+          immediateRender: false,
+        },
+      })
+
       .to(icon.current.scale, {
-        y: isMobile ? 0.2 : 0.4,
-        x: isMobile ? 0.2 : 0.4,
-        z: isMobile ? 0.2 : 0.4,
+        y: 0.3,
+        x: 0.3,
+        z: 0.3,
         scrollTrigger: {
           trigger: ".two",
           start: "top bottom",
@@ -105,7 +119,7 @@ export default function Model(props) {
         position: "absolute",
         scrollTrigger: {
           trigger: ".three",
-          start: "top bottom", // Adjust start to start later
+          start: "top bottom",
           end: "bottom 100%",
           scrub: true,
           immediateRender: false,

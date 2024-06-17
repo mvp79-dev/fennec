@@ -32,7 +32,8 @@ export const SectionJoin = () => {
         <section className="join">
           <div className="join-content">
             <div className={`join-content-texts ${isVisibleOne ? 'visible' : ''}`} ref={oneRef}>
-                <h1 className="description white" > Sign up for early access to know more about all the features Fennec has to offer you for the best hospitality and nightlife experience you can ever imagine!</h1>
+                <h1 className="small-headline margin-top white" >Sign Up</h1>
+                <h1 className="description margin-center white" >Join us to gain early access to all of Fennec’s features and elevate your hospitality and nightlife experience!</h1>
                 <div className="form-content" >
                     <form className={`form-form ${isVisibleTwo ? 'visible' : ''}`} ref={twoRef} >  
                         <input name="name" type="text" class="feedback-input" placeholder="Name" />   
