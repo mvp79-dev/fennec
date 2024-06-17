@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import CanvasContainer from "../CanvasContainer";
+import AnimText from "../AnimText";
 
 export const Section2 = () => {
 
@@ -45,6 +46,7 @@ export const Section2 = () => {
             <div className="mobile-scroll" />
             <h1 className="small-headline margin-top white" >We are <span className="gold" >Fennec AI</span></h1>
             <p className="description white margin-center" > A marketplace of AI and ML products and services specifically designed to grow the hospitality and nightlife industry</p>
+            <AnimText delay={1} />
           </div>
           </>
         )}
@@ -60,6 +62,7 @@ export const Section2 = () => {
             <div className="two-content-right" >
               <h1 className="small-headline margin-top white" >We are <span className="gold" >Fennec AI</span></h1>
               <p className="description white margin-center" > A marketplace of AI and ML products and services specifically designed to grow the hospitality and nightlife industry</p>
+              <AnimText delay={1} />
             </div>
           </div>
         </section>

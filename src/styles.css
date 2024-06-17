@@ -311,6 +311,23 @@ html.lenis {
   margin-top: 0;
 }
 
+.typing-box {
+  height: 5vh;
+  width: 100%;
+}
+
+.typing-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.25vw;
+  line-height: 145%;
+  color: #fefeff;
+}
+
+.inline {
+  display: inline;
+}
+
 
 
 /* SECTION THREE */
@@ -839,7 +856,20 @@ textarea {
   margin-left: 10%;
   margin-right: 10%;
   position: relative;
-  margin-bottom: -10vh;
+  margin-bottom: -7.5vh;
+}
+
+.typing-box {
+  height: 5vh;
+  width: 100%;
+}
+
+.typing-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 145%;
+  color: #fefeff;
 }
 
 
@@ -853,7 +883,6 @@ textarea {
   flex-direction: column;
   padding: 0 10%;
   justify-content: center;
-  margin-top: 15vh;
 }
 
 .three-content {
@@ -865,6 +894,7 @@ textarea {
   transform: scale(0.95);
   transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
   justify-content: space-between;
+  margin-top: 15vh;
 }
 
 .three-content.visible {
