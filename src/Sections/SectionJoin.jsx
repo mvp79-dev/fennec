@@ -38,7 +38,7 @@ export const SectionJoin = () => {
                     <form className={`form-form ${isVisibleTwo ? 'visible' : ''}`} ref={twoRef} >  
                         <input name="name" type="text" class="feedback-input" placeholder="Name" />   
                         <input name="email" type="text" class="feedback-input" placeholder="Email Address" />
-                        <input type="submit" value="SUBMIT"/>
+                        <input type="submit" value="GET EARLY ACCESS"/>
                     </form>
                 </div>
             </div>
