@@ -50,6 +50,7 @@ function App() {
   const section3Ref = useRef(null);
   const section4Ref = useRef(null);
   const section5Ref = useRef(null);
+  const sectionJoinRef = useRef(null);
 
   const [currentSection, setCurrentSection] = useState(null);
 
@@ -63,7 +64,13 @@ function App() {
     const callback = (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          setCurrentSection(entry.target.dataset.section);
+          if (entry.target.dataset.section === "section1" || entry.target.dataset.section === "section2") {
+            setCurrentSection(entry.target.dataset.section);
+          } else if (entry.target.dataset.section === "sectionjoin") {
+            setCurrentSection("sectionjoin");
+          } else {
+            setCurrentSection("explore");
+          }
         }
       });
     };
@@ -73,13 +80,17 @@ function App() {
     if (section1Ref.current) observer.observe(section1Ref.current);
     if (section2Ref.current) observer.observe(section2Ref.current);
     if (section3Ref.current) observer.observe(section3Ref.current);
+    if (section4Ref.current) observer.observe(section4Ref.current);
     if (section5Ref.current) observer.observe(section5Ref.current);
+    if (sectionJoinRef.current) observer.observe(sectionJoinRef.current);
 
     return () => {
       if (section1Ref.current) observer.unobserve(section1Ref.current);
       if (section2Ref.current) observer.unobserve(section2Ref.current);
       if (section3Ref.current) observer.unobserve(section3Ref.current);
+      if (section4Ref.current) observer.unobserve(section4Ref.current);
       if (section5Ref.current) observer.unobserve(section5Ref.current);
+      if (sectionJoinRef.current) observer.unobserve(sectionJoinRef.current);
     };
   }, []);
 
@@ -99,8 +110,8 @@ function App() {
         <div className="right-content">
           <h1 className={`small-text navigation-text ${currentSection === 'section1' ? 'gold' : 'grey'}`} onClick={() => scrollToSection(section1Ref)}>Home</h1>
           <h1 className={`small-text navigation-text ${currentSection === 'section2' ? 'gold' : 'grey'}`} onClick={() => scrollToSection(section2Ref)}>Why</h1>
-          <h1 className={`small-text navigation-text ${currentSection === 'section3' ? 'gold' : 'grey'}`} onClick={() => scrollToSection(section3Ref)}>Explore</h1>
-          <h1 className={`small-text navigation-text ${currentSection === 'section5' ? 'gold' : 'grey'}`} onClick={() => scrollToSection(section5Ref)}>Sign Up</h1>
+          <h1 className={`small-text navigation-text ${currentSection === 'explore' ? 'gold' : 'grey'}`} onClick={() => scrollToSection(section3Ref)}>Explore</h1>
+          <h1 className={`small-text navigation-text ${currentSection === 'sectionjoin' ? 'gold' : 'grey'}`} onClick={() => scrollToSection(sectionJoinRef)}>Sign Up</h1>
         </div>
       </div>
 
@@ -113,15 +124,18 @@ function App() {
       <div ref={section3Ref} data-section="section3">
         <Section3 />
       </div>
-      <Section4 />
-      <Section5 />
+      <div ref={section4Ref} data-section="section4">
+        <Section4 />
+      </div>
       <div ref={section5Ref} data-section="section5">
+        <Section5 />
+      </div>
+      <div ref={sectionJoinRef} data-section="sectionjoin">
         <SectionJoin />
       </div>
-
-      {/* <SectionFooter /> */}
     </>
   );
 }
 
 export default App;
+

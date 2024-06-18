@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import CanvasContainer from "../CanvasContainer";
 import AnimText from "../AnimText";
 import Typewriter from 'typewriter-effect';
+import { Sparkles } from "@react-three/drei";
 
 export const Section2 = () => {
 
@@ -47,14 +48,17 @@ export const Section2 = () => {
             <div className="mobile-scroll" />
             <h1 className="small-headline margin-top white" >We are <span className="gold" >Fennec AI</span></h1>
             <p className="description white margin-center" > A marketplace of AI and ML products and services specifically designed to grow the hospitality and nightlife industry</p>
-            <Typewriter
-                options={{
-                strings: ["Discover", "Connect", "Elevate", "Simplify"],
-                autoStart: true,
-                loop: true,
-                wrapperClassName: "typing-text",
-                }}
-              />
+            <div className="typewriter-box" >
+                <h1 className="description white" >With the BEST solutions powered by Fennec AI:</h1>
+                <Typewriter
+                  options={{
+                  strings: ["Discover", "Connect", "Elevate", "Simplify"],
+                  autoStart: true,
+                  loop: true,
+                  wrapperClassName: "typing-text",
+                  }}
+                />
+              </div>
           </div>
           </>
         )}
@@ -72,6 +76,7 @@ export const Section2 = () => {
               <p className="description white margin-center" > A marketplace of AI and ML products and services specifically designed to grow the hospitality and nightlife industry with the BEST solutions powered by Fennec AI:</p>
               <div className="typewriter-box" >
                 <h1 className="description white" >With the BEST solutions powered by Fennec AI:</h1>
+                <span className="inline" >
                 <Typewriter
                   options={{
                   strings: ["Discover", "Connect", "Elevate", "Simplify"],
@@ -80,6 +85,7 @@ export const Section2 = () => {
                   wrapperClassName: "typing-text",
                   }}
                 />
+                </span>
               </div>
             </div>
           </div>

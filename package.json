@@ -25,6 +25,7 @@
     "slick-carousel": "^1.8.1",
     "split-type": "^0.3.4",
     "three": "^0.150.1",
+    "typeflow-react": "^1.0.2",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {

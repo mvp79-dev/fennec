@@ -24,8 +24,8 @@ export const Section4 = () => {
         <section className="four">
           <div className={`four-content ${isVisibleOne ? 'visible' : ''}`} ref={oneRef}>
             <div className="four-left">
-              <img src="/scr6.png" className="four-left-images" />
-              <img src="/scr5.png" className="four-left-images" />
+              <img src="/r1.png" className="four-left-images" />
+              <img src="/r2.png" className="four-left-images" />
             </div>
             <div className="four-right">
               <h1 className="small-headline margin-top white" ><span className="gold" >Elevate</span> your night with exclusive rewards</h1>
