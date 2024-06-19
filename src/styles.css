@@ -311,27 +311,44 @@ html.lenis {
   margin-top: 0;
 }
 
-.typing-box {
-  height: 5vh;
-  width: 100%;
+.typewriter-box {
+  height: 7.5vh;
 }
 
-.typing-text {
+.typewriter {
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.25vw;
+  line-height: 145%;
+  overflow: hidden;
+  color: white;
+  width: 100%;
+  margin-top: 0;
+}
+
+.typewriter-main {
+  display: inline-block;
+}
+
+.typewriter-text {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 1.25vw;
   line-height: 145%;
-  color: #fefeff;
+  padding-left: 0.25vw;
 }
 
-.inline {
-  display: inline;
-}
-
-.typewriter-box {
-  display: flex;
+.best {
+  border: 1px solid #fefeff;
+  font-style: italic;
+  width: 4vw;
+  height: fit-content;
+  display: inline-block;
+  border-radius: 25px;
+  display: inline-flex;
   align-items: center;
-  gap: 0.2vw;
+  justify-content: center;
 }
 
 
@@ -865,17 +882,44 @@ textarea {
   margin-bottom: -7.5vh;
 }
 
-.typing-box {
-  height: 5vh;
-  width: 100%;
+.typewriter-box {
+  height: 7.5vh;
 }
 
-.typing-text {
+.typewriter {
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 145%;
+  overflow: hidden;
+  color: white;
+  width: 100%;
+  margin-top: 0;
+}
+
+.typewriter-main {
+  display: inline-block;
+}
+
+.typewriter-text {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 1.25rem;
   line-height: 145%;
-  color: #fefeff;
+  padding-left: 0.25vw;
+}
+
+.best {
+  border: 1px solid #fefeff;
+  font-style: italic;
+  width: 14vw;
+  height: fit-content;
+  display: inline-block;
+  border-radius: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 

@@ -4,6 +4,8 @@ import gsap from 'gsap'
 import { useThree } from "@react-three/fiber";
 import { useLayoutEffect } from "react";
 import SplitType from 'split-type'
+import { TextPlugin } from 'gsap/TextPlugin';
+gsap.registerPlugin(TextPlugin)
 
 export default function Model(props) {
 
@@ -35,40 +37,55 @@ export default function Model(props) {
   }, []);
 
   useLayoutEffect(() => {
+    // Existing code
 
     const cont = document.querySelector(".carousel");
-    const splitTypes = document.querySelectorAll('.reveal-type')
+    const splitTypes = document.querySelectorAll('.reveal-type');
 
     splitTypes.forEach((char,i) => {
+      const bg = char.dataset.bgColor;
+      const fg = char.dataset.fgColor;
 
-      const bg = char.dataset.bgColor
-      const fg = char.dataset.fgColor
-
-      const text = new SplitType(char, { types: 'chars'})
+      const text = new SplitType(char, { types: 'chars'});
 
       gsap.from(text.chars, {
-              scrollTrigger: {
-                  trigger: char,
-                  start: 'top bottom',
-                  end: 'bottom center',
-                  scrub: true,
-              },
-              opacity: 0.2,
-              stagger: 0.1,
-      })
-  })
+        scrollTrigger: {
+          trigger: char,
+          start: 'top bottom',
+          end: 'bottom center',
+          scrub: true,
+        },
+        opacity: 0.2,
+        stagger: 0.1,
+      });
+    });
 
+    // Adding the new GSAP animation code
+    const words = ["Discover", "Connect", "Elevate", "Simplify"];
+
+    let masterTl = gsap.timeline({repeat: -1}).pause();
+    
+    words.forEach(word => {
+      let tl = gsap.timeline({repeat: 1, yoyo: true, repeatDelay: 1});
+      tl.to('.typewriter-text', {duration: 1, text: word});
+      masterTl.add(tl);
+    });
+    
+    masterTl.play();
+
+
+    // Media match logic
+    const mm = gsap.matchMedia();
     mm.add({
       isDesktop: "(min-width: 800px)",
       isMobile: "(max-width: 799px)"
     }, (context) => {
       let { isMobile, isDesktop } = context.conditions;
 
-      tl
+      const tl = gsap.timeline();
 
       // FIRST
-
-      .to(".one-content", {
+      tl.to(".one-content", {
         opacity: 0,
         yPercent: -50,
         scrollTrigger: {
@@ -79,8 +96,6 @@ export default function Model(props) {
           immediateRender: false,
         },
       })
-
-
       .to(icon.current.rotation, {
         z: Math.PI * 1,
         scrollTrigger: {
@@ -91,8 +106,6 @@ export default function Model(props) {
           immediateRender: false,
         },
       })
-      
-
       .to(phone.current.scale, {
         x: isMobile ? 1.25 : 0.85,
         y: isMobile ? 1.25 : 0.85,
@@ -105,7 +118,6 @@ export default function Model(props) {
           immediateRender: false,
         },
       })
-
       .to(controls.current.target, {
         x: isMobile ? 0 : 4,
         scrollTrigger: {
@@ -116,7 +128,6 @@ export default function Model(props) {
           immediateRender: false,
         },
       })
-
       .to(icon.current.scale, {
         y: 4,
         x: 4,
@@ -129,7 +140,6 @@ export default function Model(props) {
           immediateRender: false,
         },
       })
-
       .to(".experience", {
         position: "absolute",
         scrollTrigger: {
@@ -139,14 +149,9 @@ export default function Model(props) {
           scrub: true,
           immediateRender: false,
         },
-      })
-
-      
-
-    })
-    
-
-  }, [])
+      });
+    });
+  }, []);
 
   const { nodes, materials } = useGLTF('./fennec.glb')
   return (
