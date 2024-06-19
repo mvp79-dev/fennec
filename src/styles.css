@@ -313,20 +313,18 @@ html.lenis {
 }
 
 .typewriter-box {
-  height: 10vh;
+  height: fit-content;
   position: relative;
 }
 
-.typewriter-box::before {
-  content: '';
+.box-background-effect {
+  width: 90%;
+  height: 50%;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 20%;
-  background-color: #f6e4fc;
-  filter: blur(70px);
-  z-index: 0;
+  background-color: #f6e4fc50;
+  filter: blur(30px);
 }
 
 .typewriter {
@@ -339,6 +337,7 @@ html.lenis {
   color: white;
   width: 100%;
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 .typewriter-main {
@@ -900,20 +899,18 @@ textarea {
 }
 
 .typewriter-box {
-  height: 10vh;
+  height: fit-content;
   position: relative;
 }
 
-.typewriter-box::before {
-  content: '';
+.box-background-effect {
+  width: 90%;
+  height: 70%;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 40%;
-  background-color: #f6e4fc;
-  filter: blur(70px);
-  z-index: 0;
+  background-color: #f6e4fc50;
+  filter: blur(30px);
 }
 
 .typewriter {

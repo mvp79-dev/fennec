@@ -49,6 +49,7 @@ export const Section2 = () => {
             <h1 className="small-headline margin-top white" >We are <span className="gold" >Fennec AI</span></h1>
             <p className="description white margin-center" > A marketplace of AI and ML products and services specifically designed to grow the hospitality and nightlife industry</p>
               <div className="typewriter-box" >
+                <div className="box-background-effect" />
                 <h1 className="typewriter" >
                   <span class='typewriter-main'>With the <span className="best" >best</span> solutions powered by Fennec AI:<span class="typewriter-text"></span></span>
                 </h1>
@@ -69,6 +70,7 @@ export const Section2 = () => {
               <h1 className="small-headline margin-top white" >We are <span className="gold" >Fennec AI</span></h1>
               <p className="description white margin-center" > A marketplace of AI and ML products and services specifically designed to grow the hospitality and nightlife industry</p>
               <div className="typewriter-box" >
+                <div className="box-background-effect" />
                 <h1 className="typewriter" >
                   <span class='typewriter-main'>With the <span className="best" >best</span> solutions powered by Fennec AI:<span class="typewriter-text"></span></span>
                 </h1>
