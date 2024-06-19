@@ -50,7 +50,7 @@ export const Section2 = () => {
             <p className="description white margin-center" > A marketplace of AI and ML products and services specifically designed to grow the hospitality and nightlife industry</p>
               <div className="typewriter-box" >
                 <h1 className="typewriter" >
-                  <span class='typewriter-main'>With the <span className="best" >best</span> solutions powered by Fennec AI:</span><span class="typewriter-text"></span>
+                  <span class='typewriter-main'>With the best solutions powered by Fennec AI:</span><span class="typewriter-text"></span>
                 </h1>
               </div>
           </div>
